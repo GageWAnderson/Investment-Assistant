@@ -17,3 +17,6 @@ Features:
 2. Calculate net portfolio worth by sector for each user (user makes sectors themselves)
 3. Create an automatic portfolio rebalancer (keep each sector of the portfolio at the same percentage
 of portfolio size) simply by pressing a button
+
+Website to help set up dependancies:
+https://alligator.io/react/mern-stack-intro/
