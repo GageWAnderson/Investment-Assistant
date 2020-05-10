@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Gage, Alberto, Nikhil, Jordan\r Project MVP Due: June 1st",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
