@@ -3,7 +3,9 @@ Gage, Alberto, Nikhil, Jordan
 Project MVP Due: June 1st
 
 TL;DR:
-to run (backend): npm run dev-start
+to run (backend): cd to Root directory, type npm run Backend
+to run (frontend): cd to Root directory, type npm run Frontend
+to run (both backend and frontend): cd to Root directory, type npm run dev
 dependancies: In package.json file IN BACKEND FOLDER
 
 Stack:
