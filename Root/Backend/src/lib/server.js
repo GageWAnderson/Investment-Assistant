@@ -7,7 +7,7 @@ import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import {authRouter} from '../routes/user-routes.js';
+import {authRouter} from '../routes/api/user-routes.js';
 //import {middleware} from './error-middleware';
 
 const app = express();
@@ -15,11 +15,15 @@ const router = express.Router();
 
 // env variables
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/mern-starter';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://Gage:BUBe4XAFU7O2ODYw@cluster0-kcmwj.gcp.mongodb.net/test?retryWrites=true&w=majority';
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => console.log('MongoDB Connected...'))
+  .catch(err => console.log(err));
 
+//Body Parser middleware
 app.use(bodyParser.json(),cors())
 
 app.use(authRouter);

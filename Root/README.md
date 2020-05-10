@@ -2,6 +2,10 @@
 Gage, Alberto, Nikhil, Jordan
 Project MVP Due: June 1st
 
+TL;DR:
+to run (backend): npm run dev-start
+dependancies: In package.json file IN BACKEND FOLDER
+
 Stack:
 Node JS
 Express JS (Node + Express for backend)
@@ -11,6 +15,8 @@ React JS (Front-End)
 Other:
 Use Docker to Contain the project and its dependancies
 Use npm to manage dependancies
+Uses ES6 Style by having "type": "module" in package.json
+  - This requires that the latest version of Node (v14.2.0) is installed
 
 Features:
 1. Calculated net portfolio worth for each user

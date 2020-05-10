@@ -7,6 +7,7 @@
     "lint": "eslint ./",
     "test": "jest -i --verbose --coverage --runInBand",
     "start": "node index.js",
+    "dev-start": "nodemon index.js",
     "dboff": "killall mongod",
     "watch": "nodemon index.js",
     "dbon": "mkdir -p ./db && mongod --dbpath ./db"
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "eslint": "^7.0.0",
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.3"
   }
 }
