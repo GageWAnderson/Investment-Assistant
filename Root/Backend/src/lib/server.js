@@ -14,7 +14,7 @@ const app = express();
 const router = express.Router();
 
 // env variables
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://Gage:BUBe4XAFU7O2ODYw@cluster0-kcmwj.gcp.mongodb.net/test?retryWrites=true&w=majority';
 
 mongoose.Promise = Promise;
