@@ -20,3 +20,6 @@ of portfolio size) simply by pressing a button
 
 Website to help set up dependancies:
 https://alligator.io/react/mern-stack-intro/
+
+How to make the file structure for a MERN App:
+https://stackoverflow.com/questions/51126472/how-to-organise-file-structure-of-backend-and-frontend-in-mern
