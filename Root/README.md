@@ -31,3 +31,6 @@ https://alligator.io/react/mern-stack-intro/
 
 How to make the file structure for a MERN App:
 https://stackoverflow.com/questions/51126472/how-to-organise-file-structure-of-backend-and-frontend-in-mern
+
+Switching Mongo DB for oracle database:
+https://expressjs.com/en/guide/database-integration.html#oracle
