@@ -7,7 +7,9 @@ import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import {authRouter} from '../routes/api/user-routes.js';
+//import { allRouters } from '../routes/api/index.js';
+import { testRouter } from '../routes/api/api-test-routes.js';
+import { authRouter } from '../routes/api/user-routes.js';
 //import {middleware} from './error-middleware';
 
 const app = express();
@@ -26,6 +28,7 @@ mongoose
 //Body Parser middleware
 app.use(bodyParser.json(),cors())
 
+app.use(testRouter);
 app.use(authRouter);
 
 app.all('*', (request, response) => {
