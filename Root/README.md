@@ -1,23 +1,29 @@
 # Investment-Assistant
 Gage, Alberto, Nikhil, Jordan
+
 Project MVP Due: June 1st
 
 TL;DR:
-to run (backend): cd to Root directory, type npm run Backend
-to run (frontend): cd to Root directory, type npm run Frontend
-to run (both backend and frontend): cd to Root directory, type npm run dev
+
+Run only backend: cd into *Root*, run `npm run Backend`
+
+Run only frontend: cd into *Root*, run `npm run Frontend`
+
+Run both backend and frontend: cd into *Root*, run `npm run dev`
+
 dependancies: In package.json file IN BACKEND FOLDER
 
+
 Stack:
-Node JS
-Express JS (Node + Express for backend)
-Mongo DB (Database)
-React JS (Front-End)
+- Node JS
+- Express JS (Node + Express for backend)
+- Mongo DB (Database)
+- React JS (Front-End)
 
 Other:
-Use Docker to Contain the project and its dependancies
-Use npm to manage dependancies
-Uses ES6 Style by having "type": "module" in package.json
+- Use Docker to Contain the project and its dependancies
+- Use npm to manage dependancies
+- Uses ES6 Style by having "type": "module" in package.json
   - This requires that the latest version of Node (v14.2.0) is installed
 
 Features:
