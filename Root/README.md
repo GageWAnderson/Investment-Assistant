@@ -3,7 +3,7 @@
 
 Project MVP Due: June 1st
 
-TL;DR:
+__Requires Node v 13+ because of ES6__
 
 Run only backend: cd into *Root*, run `npm run Backend`
 
