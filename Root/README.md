@@ -1,5 +1,5 @@
-# Investment-Assistant
-Gage, Alberto, Nikhil, Jordan
+# Investment Assistant
+### Gage, Alberto, Nikhil, Jordan
 
 Project MVP Due: June 1st
 
