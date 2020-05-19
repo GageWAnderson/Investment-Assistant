@@ -10,14 +10,14 @@ import bodyParser from 'body-parser';
 //import { allRouters } from '../routes/api/index.js';
 import { testRouter } from '../routes/api/api-test-routes.js';
 import { authRouter } from '../routes/api/user-routes.js';
-//import {middleware} from './error-middleware';
+import { URI } from '../../../config/keys.js'
 
 const app = express();
 const router = express.Router();
 
 // env variables
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://Gage:BUBe4XAFU7O2ODYw@cluster0-kcmwj.gcp.mongodb.net/test?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI || URI
 
 mongoose.Promise = Promise;
 mongoose
@@ -26,7 +26,7 @@ mongoose
   .catch(err => console.log(err));
 
 //Body Parser middleware
-app.use(bodyParser.json(),cors())
+app.use(bodyParser.json(),cors());
 
 app.use(testRouter);
 app.use(authRouter);
