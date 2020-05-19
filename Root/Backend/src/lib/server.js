@@ -8,6 +8,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import { mainRouter } from '../routes/index.js';
+import { URI } from '../../../config/keys.js';
+import passport from 'passport';
 
 const app = express();
 const router = express.Router();
@@ -20,7 +22,7 @@ const PORT = process.env.PORT || 5000;
 
 
 // Database
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://Gage:BUBe4XAFU7O2ODYw@cluster0-kcmwj.gcp.mongodb.net/test?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI || URI;
 
 mongoose.Promise = Promise;
 mongoose
@@ -30,8 +32,14 @@ mongoose
 
 
 
-//Body Parser middleware
-app.use(bodyParser.json(),cors())
+//HTML, JSON, Body Parser middleware
+app.use(bodyParser.json(),cors());
+app.use(bodyParser.urlencoded());
+
+//Passport middleware
+app.use(passport.initialize());
+
+//Passport config
 
 
 
