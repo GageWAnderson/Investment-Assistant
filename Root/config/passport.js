@@ -2,7 +2,7 @@ import { Strategy } from "passport-jwt";
 import { ExtractJwt } from "passport-jwt";
 import 'mongoose';
 import { User } from 'mongoose';
-import { keys } from "../config/keys.js"
+import { keys } from "./keys.js"
 
 const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();

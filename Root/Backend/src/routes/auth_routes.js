@@ -1,19 +1,19 @@
 'use strict'
 
-import  Router  from 'express';
+import Router from 'express';
 import bodyParser from 'body-parser';
-import '../../../../config/keys.js'
+import "../../../config/keys.js"
 
 //Load user input validation
 import { validateRegister } from './validation/register.js';
 import { validateLogin } from './validation/login.js';
 
-import {User} from '../../models/user.js';
+import {User} from '../models/user.js';
 
 export const authRouter = new Router();
 
 //User signup API (takes a signup form)
-authRouter.post('/api/users/signup', (req, res, next) => {
+authRouter.post('/signup', (req, res, next) => {
 
   const { errors, isValid } = validateRegister(req.body);
   console.log(req.body)
@@ -33,17 +33,8 @@ authRouter.post('/api/users/signup', (req, res, next) => {
 });
 
 //Testing to see if the API works by getting all the users:
-authRouter.get('/api/users/all-users', (req,res,next) => {
+authRouter.get('/all-users', (req,res,next) => {
   User.find()
     .then(users => res.json(users))
     .catch(err => console.log(err))
 });
-
-//User login API
-// authRouter.get('/api/login', basicAuth, (req, res, next) => {
-//   console.log('hit /api/login')
-
-//   req.user.tokenCreate()
-//   .then(token => res.send(token))
-//   .catch(next)
-// })
