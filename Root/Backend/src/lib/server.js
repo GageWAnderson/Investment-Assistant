@@ -8,7 +8,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import { mainRouter } from '../routes/index.js';
-import { URI } from '../../../config/keys.js'
+import { URI } from '../../../config/keys.js';
+import passport from 'passport';
 
 const app = express();
 const router = express.Router();
@@ -31,8 +32,14 @@ mongoose
 
 
 
-//Body Parser middleware
+//HTML, JSON, Body Parser middleware
 app.use(bodyParser.json(),cors());
+app.use(bodyParser.urlencoded());
+
+//Passport middleware
+app.use(passport.initialize());
+
+//Passport config
 
 
 

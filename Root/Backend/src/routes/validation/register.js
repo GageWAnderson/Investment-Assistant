@@ -10,9 +10,8 @@ export function validateRegister(data) { //http form gives username,email,passwo
     data.password2 = !isEmpty(data.password2) ? data.password2 : "";
     data.email = !isEmpty(data.email) ? data.email : "";
     data.username = !isEmpty(data.username) ? data.username : "";
-    console.log(data.username)
-    console.log("Hello?")
-    console.log(data.username,data.email,data.password,data.password2);
+    console.log(data.password)
+    console.log(data.password2)
 
     //Name Checks:
     if(validator.isEmpty(data.username)){
@@ -33,10 +32,10 @@ export function validateRegister(data) { //http form gives username,email,passwo
     if(validator.isEmpty(data.password2)){
         errors.password2 = "Confirm password field required";
     }
-    if(validator.isLength(data.password,{min:8,max:24})){
+    if(!validator.isLength(data.password,{min:8,max:24})){
         errors.password = "Password must be between 8 and 24 characters inclusive";
     }
-    if(validator.equals(data.password,data.password2)){
+    if(!validator.equals(data.password,data.password2)){
         errors.password2 = "Passwords must match.";
     }
 

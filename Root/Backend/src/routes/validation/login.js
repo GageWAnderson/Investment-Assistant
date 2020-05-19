@@ -1,5 +1,6 @@
-import 'validator'
-import 'is-empty'
+import 'validator';
+import isEmpty from 'is-empty';
+import validator from 'validator'; //Uses npm module for user validation
 
 export function validateLogin(data) {
   let errors = {};// Convert empty fields to an empty string so we can use validator functions
@@ -8,12 +9,12 @@ export function validateLogin(data) {
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";// Email checks
 
-  if (Validator.isEmpty(data.email)) {
+  if (validator.isEmpty(data.email)) {
     errors.email = "Email field is required";
-  } else if (!Validator.isEmail(data.email)) {
+  } else if (!validator.isEmail(data.email)) {
     errors.email = "Email is invalid";
   }// Password checks
-  if (Validator.isEmpty(data.password)) {
+  if (validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
   }return {
     errors,
