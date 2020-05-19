@@ -87,3 +87,8 @@ authRouter.post('/login', (req,res,next) => {
     });
   });
 });
+
+// //Test route to examine all the users in the DB
+// authRouter.get('/all-users',(req,res,next) => {
+
+// });
