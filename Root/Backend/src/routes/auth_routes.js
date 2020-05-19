@@ -4,7 +4,7 @@ import Router from 'express';
 import bodyParser from 'body-parser';
 
 //import basicAuth from '../lib/basic-auth-middleware.js'
-import {User} from '../../models/user.js';
+import {User} from '../models/user.js';
 
 export const authRouter = new Router();
 
