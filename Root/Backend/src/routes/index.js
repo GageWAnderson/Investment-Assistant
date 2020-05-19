@@ -10,8 +10,8 @@
 import Router from 'express';
 import bodyParser from 'body-parser';
 
-import { apiRouter } from './api/api_routes.js'
-import { authRouter } from './auth/auth_routes.js'
+import { apiRouter } from './api_routes.js'
+import { authRouter } from './auth_routes.js'
 
 export const mainRouter = new Router();
 
