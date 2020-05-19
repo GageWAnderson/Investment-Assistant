@@ -7,16 +7,19 @@ import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-//import { allRouters } from '../routes/api/index.js';
-import { testRouter } from '../routes/api/api-test-routes.js';
-import { authRouter } from '../routes/api/user-routes.js';
-//import {middleware} from './error-middleware';
+import { mainRouter } from '../routes/index.js';
 
 const app = express();
 const router = express.Router();
 
+
+
 // env variables
 const PORT = process.env.PORT || 5000;
+
+
+
+// Database
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://Gage:BUBe4XAFU7O2ODYw@cluster0-kcmwj.gcp.mongodb.net/test?retryWrites=true&w=majority';
 
 mongoose.Promise = Promise;
@@ -25,19 +28,23 @@ mongoose
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
+
+
 //Body Parser middleware
 app.use(bodyParser.json(),cors())
 
-app.use(testRouter);
-app.use(authRouter);
 
+
+// Setting routers
+app.use(mainRouter);
+
+
+
+// error middleware
 app.all('*', (request, response) => {
   console.log('Returning a 404 from the catch-all route');
   return response.sendStatus(404);
 });
-
-// error middleware
-//app.use(middleware);
 
 //These variables start and stop the server on PORT
 export const start = () => {
