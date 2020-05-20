@@ -7,7 +7,7 @@ import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import { mainRouter } from '../routes/index.js';
+import { mainRouter } from '../routes/main.js';
 import { URI } from '../../../config/keys.js';
 import passport from 'passport';
 
