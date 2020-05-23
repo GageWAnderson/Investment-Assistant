@@ -114,3 +114,7 @@ dist
 .yarn/unplugged
 .yarn/build-state.yml
 .pnp.*
+
+# ignoring large files flagged by git
+Backend/instantclient/
+
