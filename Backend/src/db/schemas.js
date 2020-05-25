@@ -10,8 +10,8 @@ const userSchema = mongoose.Schema({
 });
 
 const portfolioSchema = mongoose.Schema({
-    value: { type: Number, required: true },
-    breakdown: { type: Map, of: Number }
+    totalPrice: { type: Number, required: true },
+    breakdown: { type: Map, of: Number, required: true }
 });
 
 const stockSchema = mongoose.Schema({
