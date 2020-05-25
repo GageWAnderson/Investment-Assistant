@@ -12,8 +12,10 @@ import bodyParser from 'body-parser';
 
 import { apiRouter } from './api_routes.js'
 import { authRouter } from './auth_routes.js'
+import { stockRouter } from './stock_routes.js'
 
 export const mainRouter = new Router();
 
 mainRouter.use('/api', apiRouter);
 mainRouter.use('/auth', authRouter);
+mainRouter.use('/stock', stockRouter);
