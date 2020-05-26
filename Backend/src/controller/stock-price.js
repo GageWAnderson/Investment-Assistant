@@ -3,11 +3,38 @@ import "isomorphic-fetch"
 dotenv.config({ silent: process.env.NODE_ENV === 'production' });
 
 
-const fetchCaller = (url, res, stock) => {
+function getStockURL(stock) {
+	return "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+
+			stock + "&apikey=" + process.env.ALPHAVANTAGE_KEY;
+}
+
+function getStockPrices(stocks) {
+	var fetchCalls = [];
+	let stockPrices = new Map();
+	var i;
+	for (i = 0; i < stocks.length; i++) {
+		const stock = stocks[i];
+		const stockURL = getStockURL(stock);
+		const fetchCall = () => {
+			fetch(stockURL)
+				.then(response => response.json())
+				.then(data => {
+			  		const price = data["Global Quote"]["05. price"];
+			  		stockPrices[stock] = price;
+			  	});
+		}
+		fetchCalls.push(fetchCall);
+	}
+	const fetchMap = async () => await Promise.all(fetchCalls);
+	fetchMap();
+	return stockPrices;
+}
+
+function fetchCaller(url, res, stock){
 	fetch(url)
 	  	.then(response => response.json())
 	  	.then(data => {
-	  		const price = data["Global Quote"]["05. price"]
+	  		const price = data["Global Quote"]["05. price"];
 	  		res.send(stock + ": " + price);
 	  	})
 	  	.catch((error) => {
@@ -15,13 +42,16 @@ const fetchCaller = (url, res, stock) => {
 		});
 }
 
-export const getStockPrice = (req,res) => {
+
+
+function getStockPrice(req,res){
 	const stock = req.query.stock
 	if (stock === undefined) {
 		res.send('Requires stock name param in the url.');
 	} else {
-		const url = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+
-					stock + "&apikey=" + process.env.ALPHAVANTAGE_KEY;
+		const url = getStockURL(stock);
 		fetchCaller(url, res, stock);
 	}
-};
+}
+
+export {getStockPrice, getStockPrices};

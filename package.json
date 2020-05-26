@@ -33,9 +33,7 @@
     "mongoose": "^5.9.13",
     "passport": "^0.4.1",
     "superagent": "^5.2.2",
-    "validator": "^13.0.0",
-    "mongoose": "^5.9.13",
-    "superagent": "^5.2.2"
+    "validator": "^13.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
