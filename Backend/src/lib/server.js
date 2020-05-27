@@ -26,7 +26,7 @@ const MONGODB_URI = process.env.MONGODB_URI || URI;
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
@@ -34,7 +34,7 @@ mongoose
 
 //HTML, JSON, Body Parser middleware
 app.use(bodyParser.json(),cors());
-app.use(bodyParser.urlencoded());
+app.use(express.urlencoded({extended: true}));
 
 //Passport middleware
 app.use(passport.initialize());
