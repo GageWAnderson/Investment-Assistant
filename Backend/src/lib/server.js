@@ -26,7 +26,7 @@ const MONGODB_URI = process.env.MONGODB_URI || URI;
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
