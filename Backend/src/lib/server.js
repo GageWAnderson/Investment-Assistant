@@ -34,7 +34,7 @@ mongoose
 
 //HTML, JSON, Body Parser middleware
 app.use(bodyParser.json(),cors());
-app.use(bodyParser.urlencoded());
+app.use(express.urlencoded({extended: true}));
 
 //Passport middleware
 app.use(passport.initialize());
