@@ -13,16 +13,16 @@ async function getStockPrices(stocks) {
 		console.log("stockPrices");
 		const url = getStockURL(stock);
 		console.log(url);
-    	fetch(url)
+    	return fetch(url)
     		.then(response => response.json())
     		.then(data => {
-		  		const price = data["Global Quote"]["05. price"];
-		  		stockPrices[stock] = price; })
+				  const price = data["Global Quote"]["05. price"];
+				  stockPrices[stock] = price; 
+			})
     		.catch((error) => {
   				console.log("Can't find price for: " + stock + ".");
 			});
-		}
-  	);
+	});
 	await Promise.all(fetchCalls);
 	return stockPrices;
 }

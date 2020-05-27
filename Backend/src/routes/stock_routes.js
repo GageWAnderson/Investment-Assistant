@@ -9,6 +9,5 @@ stockRouter.get('/price', (req,res) => {
 });
 
 stockRouter.get('/prices', (req, res) => {
-	console.log(getStockPrices(["IBM","MMM"]));
-	res.send("here");
+	getStockPrices(["IBM","MMM"]).then(stockPrices => res.send(stockPrices))
 });
